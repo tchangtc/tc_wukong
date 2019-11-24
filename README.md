@@ -16,7 +16,7 @@
 ## 安装开发环境
 
 ``` bash
-git clone https://github.com/wzpan/wukong-starter.git
+git clone https://github.com/tchangtc/tc_wukong.git
 cd wukong-starter
 ./install.sh
 ```
