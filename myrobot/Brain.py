@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import pkgutil
-from Robot import config, logging
-from Robot.sdk.AbstractPlugin import AbstractPlugin
+from myrobot import config, logging
+from myrobot.sdk.AbstractPlugin import AbstractPlugin
 
 logger = logging.getLogger(__name__)
 

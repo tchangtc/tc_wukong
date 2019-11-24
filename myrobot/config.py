@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import yaml
-from Robot import constant, logging
+from myrobot import constant, logging
 
 logger = logging.getLogger(__name__)
 

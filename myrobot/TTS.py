@@ -3,7 +3,7 @@ import os
 import base64
 import tempfile
 from . import utils, config, constant
-from Robot import logging
+from myrobot import logging
 from abc import ABCMeta, abstractmethod
 from .sdk import XunfeiSpeech
 
