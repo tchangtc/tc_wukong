@@ -13,7 +13,7 @@ from datetime import datetime
 from time import mktime
 import _thread as thread
 
-from Robot import logging
+from myrobot import logging
 
 logger = logging.getLogger(__name__)
 

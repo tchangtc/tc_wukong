@@ -2,7 +2,7 @@
 
 import logging
 from logging import FileHandler
-from Robot import constant
+from myrobot import constant
 
 DEBUG = logging.DEBUG
 INFO = logging.INFO

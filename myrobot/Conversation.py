@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-from Robot import Player, AI, utils, ASR, TTS
-from Robot.Brain import Brain
+from myrobot import Player, AI, utils, ASR, TTS
+from myrobot.Brain import Brain
 import requests
 import uuid
 
