@@ -1,4 +1,4 @@
-# wukong-starter
+# wukong
 
 该项目是在wzpan提供的原始Demo基础上改进而来的。 用于给 wukong-robot 提供一个初始化的教学用开发环境。
 用于给 wukong-robot 提供一个初始化的教学用开发环境。
