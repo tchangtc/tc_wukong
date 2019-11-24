@@ -1,5 +1,6 @@
 # wukong-starter
 
+该项目是在wzpan提供的原始Demo基础上改进而来的。 用于给 wukong-robot 提供一个初始化的教学用开发环境。
 用于给 wukong-robot 提供一个初始化的教学用开发环境。
 
 主要借鉴了 docker 的思想以及 [musistudio/wukong-robot-install-script](https://github.com/musistudio/wukong-robot-install-script)，但去除了 wukong-robot 本体。要安装 wukong-robot 的朋友请移步使用他的工具。
