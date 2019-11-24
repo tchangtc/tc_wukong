@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Custom styles for this template -->
+    <link href="{{static_url('starter-template.css')}}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">intelligent-robot</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="/">conversation</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="/config">configuration</a>
+      </li>
+     <li class="nav-item active">
+        <a class="nav-link" href="/log">diary<span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<main role="main">
+
+  <div class="container">
+
+  </div> <!-- /container -->
+
+</main>
+
+
+{% end %}
+
+
