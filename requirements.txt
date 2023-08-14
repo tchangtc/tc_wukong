@@ -1,4 +1,4 @@
 PyYAML
 Markdown==3.0.1
 PyAudio==0.2.11
-tornado==5.1.1
+tornado==6.3.3
