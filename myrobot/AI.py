@@ -12,7 +12,7 @@ class AbstractRobot(object):
 
 class TulingRobot(AbstractRobot):
     """
-    图灵机器人
+    Tuling Robot
     """
 
     SLUG = 'tuling-Robot'
@@ -22,7 +22,7 @@ class TulingRobot(AbstractRobot):
 
     def chat(self, query):
         """
-        使用图灵机器人聊天
+        Chat with Tuling robot
         """
 
         URL = "http://openapi.tuling123.com/openapi/api/v2"

@@ -1,19 +1,18 @@
 # wukong
 
-该项目是在wzpan提供的原始Demo基础上改进而来的。 用于给 wukong-robot 提供一个初始化的教学用开发环境。
-用于给 wukong-robot 提供一个初始化的教学用开发环境。
+This project is an improved version based on the original demo provided by wzpan. It provides an educational development environment for wukong-robot.
 
-主要借鉴了 docker 的思想以及 [musistudio/wukong-robot-install-script](https://github.com/musistudio/wukong-robot-install-script)，但去除了 wukong-robot 本体。要安装 wukong-robot 的朋友请移步使用他的工具。
+It draws inspiration from Docker and [musistudio/wukong-robot-install-script](https://github.com/musistudio/wukong-robot-install-script), but removes the wukong-robot core. If you want to install wukong-robot itself, please use that tool instead.
 
-## 适用系统 ##
+## Supported Systems
 
-本脚本在几个平台中测试可用：
+This script has been tested on the following platforms:
 
 * Ubuntu 16.04
 * Mac OS X
-* Windows 10 上的 WSL（Windows Subsystem for Linux）
+* WSL on Windows 10 (Windows Subsystem for Linux)
 
-## 安装开发环境
+## Install Development Environment
 
 ``` bash
 git clone https://github.com/tchangtc/tc_wukong.git
@@ -21,41 +20,40 @@ cd wukong-starter
 ./install.sh
 ```
 
-安装过程中，因为需要安装一些工具，可能会提示你输入 sudo 密码。另外，安装 homebrew 时需要你按回车确认，照做即可。
+During installation, you may be prompted for your sudo password when installing tools. Also, homebrew installation requires pressing Enter to confirm — just follow the prompts.
 
-如果使用遇到问题，可以到 [issue 页](https://github.com/wzpan/wukong-starter/issues) 提交反馈。
+If you encounter issues, please submit feedback on the [issue page](https://github.com/wzpan/wukong-starter/issues).
 
-## 启动开发环境
+## Start Development Environment
 
 ``` bash
 source start.sh
 ```
 
-之后就可以在这个环境中进行开发。第一次启动时顺便装一下 `pyaudio`：
+After that, you can start developing in this environment. On first launch, install `pyaudio` as well:
 
 ``` bash
 pip3 install pyaudio
 ```
 
-## Linux 用户说明
+## Linux User Notes
 
-Linux 用户如果在遇到这个错误：
+If Linux users encounter this error:
 
-``` 
+```
 swig: error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory
 ```
 
-可以参考 [这篇文章](https://www.jianshu.com/p/3dbad433783f) ，创建一下软链接解决。
+Refer to [this article](https://www.jianshu.com/p/3dbad433783f) and create a symlink to resolve it.
 
-## Mac 用户说明
+## Mac User Notes
 
-如果遇到 brew 安装软件失败，可以尝试使用清华大学的 [Homebrew 镜像](https://mirror.tuna.tsinghua.edu.cn/help/homebrew/) 和 [Homebrew bottles 镜像](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/) 。
+If brew fails to install software, try using Tsinghua University's [Homebrew mirror](https://mirror.tuna.tsinghua.edu.cn/help/homebrew/) and [Homebrew bottles mirror](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew-bottles/).
 
-## Windows 用户说明
+## Windows User Notes
 
-建议使用虚拟机安装 Ubuntu 来进行开发学习。如果你是这种方案，请关注上面的 [Linux用户说明](#linux-用户说明)。下面的说明仅适用于 Windows + WSL 的用户。
+It is recommended to use a virtual machine with Ubuntu for development and learning. If you go this route, refer to the [Linux User Notes](#linux-user-notes) above. The instructions below are only for Windows + WSL users.
 
-在执行本脚本前，你需要先启动 pulseaudio-server 。
+Before running this script, you need to start the pulseaudio-server first.
 
-下载解压 [pulseaudio.zip](http://hahack-1253537070.file.myqcloud.com/misc/pulseaudio.zip) 并在 CMD 里运行 bin 目录下的 pulseaudio.exe 。
-
+Download and extract [pulseaudio.zip](http://hahack-1253537070.file.myqcloud.com/misc/pulseaudio.zip) and run pulseaudio.exe from the bin directory in CMD.

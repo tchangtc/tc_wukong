@@ -31,13 +31,13 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">会话 <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Chat <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/config">配置</a>
+        <a class="nav-link" href="/config">Config</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/log">日志</a>
+        <a class="nav-link" href="/log">Log</a>
       </li>
     </ul>
   </div>
@@ -56,12 +56,12 @@
   <div class="container history" id="container">
     {% if not history or len(history) == 0 %}
             <center>
-                <p>无聊天记录,请先和悟空聊会儿天吧～</p>
+                <p>No chat history yet. Chat with Wukong first~</p>
             </center>
         {% else %}
           {% for h in history %}
             {% if h['type'] == 0 %}
-                {% comment 用户说的话 %}
+                {% comment user message %}
                 <div class="right">
                     <div class="bubble bubble-green">
                         <div class="bubble-avatar"><image src="{{static_url('tc.png')}}" width="64px"></image></div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             {% else %}
-                {% comment 机器人说的话 %}
+                {% comment robot message %}
                 <div class="left">
                     <div class="bubble bubble-white">
                         <div class="bubble-avatar"><image src="{{static_url('wukong.png')}}" width="64px"></image></div>
@@ -87,11 +87,11 @@
   <div class="container query-form" action="#">
     <center>
       <form class="form-inline">
-        <label for="query" class="col-form-label">说句话吧：</label>
+        <label for="query" class="col-form-label">Say something:</label>
         <div class="col">
-          <input type="text" class="form-control-plaintext" id="query" placeholder="今天天气怎么样？">
+          <input type="text" class="form-control-plaintext" id="query" placeholder="How is the weather today?">
         </div>
-        <button type="submit" class="btn btn-primary mb-2 CHAT">发送</button>
+        <button type="submit" class="btn btn-primary mb-2 CHAT">Send</button>
       </form>
     </center>
   </div>

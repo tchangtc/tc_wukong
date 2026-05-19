@@ -34,7 +34,7 @@ class AbstractTTS(object):
 
 class XunfeiTTS(AbstractTTS):
     """
-    科大讯飞的语音识别API.
+    iFlytek TTS API.
     """
 
     SLUG = "xunfei-tts"
@@ -62,18 +62,18 @@ def get_engine_by_slug(slug=None):
     """
 
     if not slug or type(slug) is not str:
-        raise TypeError("无效的 TTS slug '%s'", slug)
+        raise TypeError("Invalid TTS slug '%s'", slug)
 
     selected_engines = list(filter(lambda engine: hasattr(engine, "SLUG") and
                                                   engine.SLUG == slug, get_engines()))
 
     if len(selected_engines) == 0:
-        raise ValueError("错误：找不到名为 {} 的 TTS 引擎".format(slug))
+        raise ValueError("Error: TTS engine named {} not found".format(slug))
     else:
         if len(selected_engines) > 1:
-            logger.warning("注意: 有多个 TTS 名称与指定的引擎名 {} 匹配").format(slug)
+            logger.warning("Warning: multiple TTS engines match name {}").format(slug)
         engine = selected_engines[0]
-        logger.info("使用 {} TTS 引擎".format(engine.SLUG))
+        logger.info("Using {} TTS engine".format(engine.SLUG))
         return engine.get_instance()
 
 

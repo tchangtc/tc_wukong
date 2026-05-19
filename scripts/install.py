@@ -25,17 +25,17 @@ def execute_commands(command_list, cache_list):
                 if command.startswith('WORKDIR '):
                     cwd = command[8:].strip().replace('$PWD', pwd).replace('${PWD}', pwd)
                 else:
-                    logging.info("缓存命令 {}".format(command))
+                    logging.info("Cached command {}".format(command))
                 new_cache_list.append(command)
             else:
                 stop_cache = True
-                logging.info("执行命令 {}".format(command))
+                logging.info("Executing command {}".format(command))
                 if command.startswith('RUN '):
                     cmd = command[4:].strip().replace('$PWD', pwd).replace('${PWD}', pwd)
                     res = subprocess.call([cmd], shell=True, cwd=cwd)
                     if res != 0:
-                        logging.error("错误：命令 {} 执行失败！".format(command))
-                        # 写入缓存
+                        logging.error("Error: command {} execution failed!".format(command))
+                        # write cache
                         with open(os.path.join(ROOT, '.install_cache'), 'w') as f:
                             f.write('\n'.join(new_cache_list))
                         return False
@@ -48,15 +48,15 @@ def execute_commands(command_list, cache_list):
                     new_cache_list.append(command)
         return True
     except Exception as e:
-        logging.error('错误：{}'.format(e))
+        logging.error('Error: {}'.format(e))
     finally:
-        # 写入缓存
+        # write cache
         with open(os.path.join(ROOT, '.install_cache'), 'w') as f:
             f.write('\n'.join(new_cache_list))
 
 def install():
     if len(sys.argv) <= 1:
-        logging.critical("参数错误")
+        logging.critical("Invalid arguments")
         return False
     t = sys.argv[1]
     cache = ""
@@ -74,14 +74,14 @@ def install():
         with open(os.path.join(ROOT, 'win.txt'), 'r') as f:
             command_list = f.read().split('\n')
     else:
-        logging.critical("错误：不支持的系统类型")
+        logging.critical("Error: unsupported system type")
         return False
     return execute_commands(command_list, cache_list)
 
 if __name__ == '__main__':
     if install():
-        logging.info("wukong-starter 安装成功！")
+        logging.info("wukong-starter installed successfully!")
         exit(0)
     else:
-        logging.error("wukong-starter 安装失败！")
+        logging.error("wukong-starter installation failed!")
         exit(1)

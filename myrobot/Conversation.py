@@ -21,7 +21,7 @@ class Conversation(object):
             print(phrase)
 
     def handle(self, query):
-        city = '上海'
+        city = 'Shanghai'
         url = 'https://free-api.heweather.net/s6/weather/forecast?parameters'
         params = {
             "location": city,
@@ -31,18 +31,18 @@ class Conversation(object):
         r.encoding = 'utf-8'
         try:
             results = r.json()['HeWeather6'][0]['daily_forecast']
-            res = '{} 天气:'.format(city)
-            day_label = ['今天', '明天', '后天']
+            res = '{} Weather:'.format(city)
+            day_label = ['Today', 'Tomorrow', 'Day after tomorrow']
             i = 0
             for result in results:
                 tmp_min, tmp_max, cond_txt_d, cond_txt_n = \
                     result['tmp_min'], result['tmp_max'], result['cond_txt_d'], result['cond_txt_n']
-                res += '\n{}: 白天{}, 夜间{}, 气温{}到{}摄氏度'.format(day_label[i], cond_txt_d, cond_txt_n, tmp_min, tmp_max)
+                res += '\n{}: Day {}, Night {}, Temperature {} to {} Celsius'.format(day_label[i], cond_txt_d, cond_txt_n, tmp_min, tmp_max)
                 i += 1
             return res
         except Exception as e:
             print(e)
-            return '天气查询失败！'
+            return 'Weather query failed!'
 
     def converse(self, fp):
         Player.play('static/beep_lo.wav', False)
@@ -54,7 +54,7 @@ class Conversation(object):
 
     def say(self, phrase, delete=False):
         """
-        说一句话
+        Say a sentence
         """
         self.appendHistory(1, phrase)
         self.player = Player.SoxPlayer()

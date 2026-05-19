@@ -15,13 +15,13 @@ class Brain(object):
     def hasDisabled(self, name):
         if config.has('/{}/enable'.format(name)):
             if not config.get('/{}/enable'.format(name)):
-                logger.info("插件 {} 已被禁用".format(name))
+                logger.info("Plugin {} is disabled".format(name))
                 return True
         return False
 
     def init_plugins(self):
         """
-        读取所有的插件
+        Load all plugins
         """
         plugins = []
         for finder, name, ispkg in pkgutil.walk_packages(['plugins']):
@@ -38,12 +38,12 @@ class Brain(object):
 
     def doQuery(self, query):
         """
-        响应用户的query
+        Respond to user query
         """
         for plugin in self.plugins:
             if plugin.isValid(query):
-                # 命中技能 #
+                # skill matched #
                 plugin.handle(query)
                 return True
-        # 未命中技能 #
+        # no skill matched #
         return False

@@ -31,18 +31,18 @@ CUSTOM_PATH = os.path.expanduser(
 
 def getConfigPath():
     """
-    获取配置文件的路径
+    Get the config file path
 
-    returns: 配置文件的存储路径
+    returns: config file storage path
     """
     return os.path.join(CONFIG_PATH, CUSTOM_CONFIG_NAME)
 
 
 def getQAPath():
     """
-    获取QA数据集文件的路径
+    Get the QA dataset file path
 
-    returns: QA数据集文件的存储路径
+    returns: QA dataset file storage path
     """
     qa_source = os.path.join(DATA_PATH, 'qa.csv')
     qa_dst = os.path.join(CONFIG_PATH, 'qa.csv')
@@ -53,20 +53,20 @@ def getQAPath():
 
 def getConfigData(*fname):
     """
-    获取配置目录下的指定文件的路径
+    Get the path of a specified file in the config directory
 
-    :param *fname: 指定文件名。如果传多个，则自动拼接
-    :returns: 配置目录下的某个文件的存储路径
+    :param *fname: file name(s). If multiple, they are auto-joined
+    :returns: file storage path under the config directory
     """
     return os.path.join(CONFIG_PATH, *fname)
 
 
 def getData(*fname):
     """
-    获取资源目录下指定文件的路径
+    Get the path of a specified file in the resource directory
 
-    :param *fname: 指定文件名。如果传多个，则自动拼接
-    :returns: 配置文件的存储路径
+    :param *fname: file name(s). If multiple, they are auto-joined
+    :returns: file storage path
     """
     return os.path.join(DATA_PATH, *fname)
 

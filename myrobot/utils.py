@@ -11,7 +11,7 @@ def write_temp_file(content, suffix):
 
 def check_and_delete(fpath):
     """
-    检查文件是否存在并且删除
+    Check if file exists and delete it
     """
     if os.path.exists(fpath):
         os.remove(fpath)

@@ -91,7 +91,7 @@ class LoginHandler(BaseHandler):
             self.set_secure_cookie("user", self.get_argument("name"))
             self.redirect("/")
         else:
-            self.write('登录失败!')
+            self.write('Login failed!')
 
 
 settings = {

@@ -1,7 +1,7 @@
 function appendHistory(type, query, uuid) {
     if (query == '' || !uuid) return;
     if (type == 0) {
-        // 用户消息
+        // user message
         $('.history').append(`
               <div class="right">
                  <div class="bubble bubble-green">
@@ -36,7 +36,7 @@ function getHistory () {
                 historyList = JSON.parse(res.history);
                 for (let i=0; i<historyList.length; ++i) {
                     h = historyList[i];
-                    // 是否已绘制
+                    // already rendered
                     if (!$('.history').find('#'+h['uuid']).length>0) {
                         appendHistory(h['type'], h['text'], h['uuid']);
                     }
@@ -66,13 +66,13 @@ $(function() {
             success: function(res) {
                 var data = JOSN.parse(res);
                 if (data.code == 0){
-                    console.log('指令发送成功');
+                    console.log('Command sent successfully');
                 } else{
-                    console.error('指令发送失败');
+                    console.error('Command send failed');
                 }
             },
             error: function() {
-                console.error('指令发送失败');
+                console.error('Command send failed');
             }
         })
     });

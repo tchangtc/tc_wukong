@@ -21,7 +21,7 @@ def audioRecorderCallback(fname):
 # print(asr.transcribe(fname))
 # print(asr.transcribe(fname))
 # tts = TTS.XunfeiTTS()
-# phrase = '我是齐天大圣孙悟空'
+# phrase = 'I am Sun Wukong, the Monkey King'
 # fname = tts.get_speech(phrase)
 # player.play(fname, True)
 

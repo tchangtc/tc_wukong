@@ -24,7 +24,7 @@ def get_path(items, default=None):
         if key in curConfig:
             curConfig = curConfig[key]
         else:
-            logger.warning('没有找到配置 {} ,使用默认值{}'.format('/'.join(items), default))
+            logger.warning('Config {} not found, using default value {}'.format('/'.join(items), default))
             return default
     return curConfig
 
@@ -44,11 +44,11 @@ def has_path(items):
 
 def get(item, default=None):
     """
-    获取某个配置值
+    Get a config value
 
-    :param item: 配置项名。如果是多级配置，则以 ‘/a/b’ 的形式或者 ['a', 'b']
-    :param default: 默认值（可选）
-    :return: 这个配置的值.如果没有该配置,则提供一个默认值
+    :param item: config key. For nested config, use '/a/b' or ['a', 'b']
+    :param default: default value (optional)
+    :return: the config value. If not found, returns the default value
     """
     global _config, has_init
     if not has_init:
@@ -60,11 +60,11 @@ def get(item, default=None):
 
 def has(item):
     """
-    判断是否有某个配置
+    Check if a config exists
 
-    :param item: 配置项名。如果是多级配置，则以 ‘/a/b’ 的形式或者 ['a', 'b']
-    :param default: 默认值（可选）
-    :return: 是否有这个配置.
+    :param item: config key. For nested config, use '/a/b' or ['a', 'b']
+    :param default: default value (optional)
+    :return: whether this config exists
     """
     global _config, has_init
     if not has_init:
