@@ -1,26 +1,36 @@
-# config1.yml
+# Wukong Starter Configuration
+# Copy this file and fill in your own credentials.
+
 location: 'Shanghai'
+
 snowboy:
   hotword: 'snowboy/resources/wukong_tc.pmdl'
   sensitivity: 0.38
 
 Weather:
   enable: true
+  key: 'your_heweather_api_key_here'
 
 server:
   port: '5000'
-  name: 'tchang'
-  password: '12345689'
+  name: 'admin'
+  password: 'your_password_here'
+  cookie_secret: 'your_cookie_secret_here'
+
+# Tuling robot API
+# Apply at: https://www.tuling123.com/
+tuling:
+  api_key: 'your_tuling_api_key_here'
 
 # iFlytek speech service
-# appid and api_key can be applied at
-# https://xfyun.cn/
-# Register and create a WebAPI app, enable streaming dictation and online TTS capabilities
-xunfei_yuyin: (Apply at iFlytek official website if interested, credentials redacted here)
-    appid: '***********'
-    api_key: '***********************' 
-    api_secret: '******************************'
+# Apply at: https://xfyun.cn/
+# Register and create a WebAPI app, enable streaming dictation and online TTS capabilities.
+xunfei_yuyin:
+    appid: 'your_xunfei_appid_here'
+    api_key: 'your_xunfei_api_key_here'
+    api_secret: 'your_xunfei_api_secret_here'
     voice: 'xiaoyan'  # all options: https://console.xfyun.cn/services/tts
+
 # TTS engine config
 # Options:
 # han-tts       - HanTTS

@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from myrobot import Player, AI, utils, ASR, TTS
+from myrobot import Player, AI, utils, ASR, TTS, config
 from myrobot.Brain import Brain
 import requests
 import uuid
@@ -25,7 +25,7 @@ class Conversation(object):
         url = 'https://free-api.heweather.net/s6/weather/forecast?parameters'
         params = {
             "location": city,
-            "key": "f099fbd4c79041f9aa2c7870aab5b16b"
+            "key": config.get('/Weather/key', '')
         }
         r = requests.get(url, params=params)
         r.encoding = 'utf-8'

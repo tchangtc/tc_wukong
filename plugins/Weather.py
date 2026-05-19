@@ -1,6 +1,6 @@
 from myrobot.sdk.AbstractPlugin import AbstractPlugin
 import requests
-from myrobot import logging
+from myrobot import logging, config
 
 logger = logging.getLogger(__name__)
 
@@ -12,7 +12,7 @@ class Plugin(AbstractPlugin):
         url = 'https://free-api.heweather.net/s6/weather/forecast?parameters'
         params = {
             "location": city,
-            "key": "f099fbd4c79041f9aa2c7870aab5b16b"
+            "key": config.get('/Weather/key', '')
         }
         r = requests.get(url, params=params)
         r.encoding = 'utf-8'

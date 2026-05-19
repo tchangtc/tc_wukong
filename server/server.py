@@ -95,7 +95,7 @@ class LoginHandler(BaseHandler):
 
 
 settings = {
-    "cookie_secret": "\xc9%\x04\x08s\xf3\xa3/y\xb4\x10|\x0fW\xb7\xc6\xc8>\xe2\x97\x14\xa9\xa5O",
+    "cookie_secret": config.get('/server/cookie_secret', 'change_me_to_a_random_string'),
     "template_path": "server/template",
     "static_path": "server/static"
 

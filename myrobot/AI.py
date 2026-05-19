@@ -2,6 +2,7 @@
 import requests
 import json
 from uuid import getnode as get_mac
+from myrobot import config
 
 
 class AbstractRobot(object):
@@ -18,7 +19,7 @@ class TulingRobot(AbstractRobot):
     SLUG = 'tuling-Robot'
 
     def __init__(self):
-        self.api_key = "d51be2c26b114b04b3f92b9917dfc448"
+        self.api_key = config.get('/tuling/api_key', '')
 
     def chat(self, query):
         """

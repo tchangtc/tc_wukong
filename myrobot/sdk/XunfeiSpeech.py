@@ -288,10 +288,13 @@ def synthesize(msg, voice_name="xiaoyan"):
     iFlytek TTS
     """
     global ttsWsParam, gTTSPath, gTTSResult
+    from myrobot import config
+    xunfei = config.get('xunfei_yuyin', {})
     with tempfile.NamedTemporaryFile() as f:
         gTTSPath = f.name
-    ttsWsParam = TTS_Ws_Param(APPID='5d7e11a8', APIKey='96ff7d1e79f6f780aa1a14cc7ce54547',
-                              APISecret='fefd2cecbef56f96ab87d4d2a0ff472c',
+    ttsWsParam = TTS_Ws_Param(APPID=xunfei.get('appid', ''),
+                              APIKey=xunfei.get('api_key', ''),
+                              APISecret=xunfei.get('api_secret', ''),
                               Text=msg,
                               voice_name=voice_name
                               )

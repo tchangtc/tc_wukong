@@ -180,15 +180,17 @@ class XunfeiASR(AbstractASR):
     SLUG = 'xunfei-asr'
 
     def __init__(self):
-        self.appid = '5d7e11a8'
-        self.apikey = '96ff7d1e79f6f780aa1a14cc7ce54547'
+        from myrobot import config
+        xunfei = config.get('xunfei_yuyin', {})
+        self.appid = xunfei.get('appid', '')
+        self.apikey = xunfei.get('api_key', '')
+        self.apisecret = xunfei.get('api_secret', '')
 
     def transcribe(self, fpath):
-        # For testing, fill in the correct info here to run
         global wsParam, gResult
         gResult = ''
         wsParam = Ws_Param(self.appid, self.apikey,
-                           APISecret='fefd2cecbef56f96ab87d4d2a0ff472c',
+                           APISecret=self.apisecret,
                            AudioFile=fpath)
         websocket.enableTrace(False)
         wsUrl = wsParam.create_url()
